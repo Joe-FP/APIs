@@ -8,9 +8,12 @@ const MapWrapper = function(container, coords, zoom){
   }.bind(this))
 };
 
-MapWrapper.prototype.addMarker = function(coords){
-  marker = L.marker(coords).addTo(this.map);
-  marker.bindPopup('test');
+MapWrapper.prototype.addMarker = function(ipData){
+  const lat = ipData.latitude;
+  const long = ipData.longitude;
+  marker = L.marker([lat, long]).addTo(this.map);
+  const str = ipData.region + ', ' + ipData.city;
+  marker.bindPopup(str);
 };
 
 MapWrapper.prototype.setView = function(coords, zoom){
