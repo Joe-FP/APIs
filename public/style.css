@@ -1,38 +1,44 @@
 #main-map{
   height: 600px;
-}
+};
 
-#charts{
+.row {
   display: flex;
 }
-#countrychart {
-  flex: 1;
-}
-#regionchart {
-  flex: 1;
-}
-#citychart {
-  flex: 1;
+
+#table_div{
+  text-align: right;
+  padding-bottom: 100;
 }
 
-.buttons {
+
+.buttonA {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 12px 35px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-.buttons:hover {
-    background-color: green;
-    border: 1px solid green;
+    font-size: 20px;
+    width: 200px;
 }
 
-.inputs {
+.buttonA:hover {
+    background-color: green;
+    /* border: 1px solid green; */
+}
+
+.inputA {
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
+    width: 50px;
+    height: 40px;
+}
+
+#country {
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0;
 }
