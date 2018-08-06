@@ -10,18 +10,14 @@ const MapWrapper = function(container, coords, zoom){
   }.bind(this))
 };
 
-MapWrapper.prototype.addMarker = function(lat, lng){
-  marker = L.marker([lat, lng]).addTo(this.map);
+MapWrapper.prototype.addMarker = function(ipData){
+  const lat = ipData.latitude;
+  const long = ipData.longitude;
+  marker = L.marker([lat, long]).addTo(this.map);
+  const str = ipData.region + ', ' + ipData.city;
+  marker.bindPopup(str);
+  arrMarkers.push(marker);
 };
-
-// MapWrapper.prototype.addMarker = function(ipData){
-//   const lat = ipData.latitude;
-//   const long = ipData.longitude;
-//   marker = L.marker([lat, long]).addTo(this.map);
-//   const str = ipData.region + ', ' + ipData.city;
-//   marker.bindPopup(str);
-//   arrMarkers.push(marker);
-// };
 
 MapWrapper.prototype.setView = function(coords, zoom){
   this.map.setView(new L.LatLng(coords[0], coords[1]), zoom);
